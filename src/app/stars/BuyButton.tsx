@@ -1,5 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import { useInvoice } from "@telegram-apps/sdk-react";
 
 type InvoiceData = {
   title: string;
@@ -11,6 +12,8 @@ type InvoiceData = {
 };
 
 export const BuyButton = ({ invoiceData }: { invoiceData: InvoiceData }) => {
+  const invoice = useInvoice();
+
   const createInvoiceMutation = useMutation({
     mutationFn: async () => {
       const response = await axios.get(
@@ -30,6 +33,12 @@ export const BuyButton = ({ invoiceData }: { invoiceData: InvoiceData }) => {
     },
     onSuccess: (data) => {
       console.log("data on success", data);
+      if (!!data && !invoice.isOpened) {
+        invoice.open(data.result, "url").then((status) => {
+          // Output: 'paid'
+          return console.log(status);
+        });
+      }
 
       // open the stars payment pop upyarn
       window.open(data.result);
