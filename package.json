@@ -10,11 +10,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@tanstack/react-query": "^5.51.5",
     "@telegram-apps/react-router-integration": "^1.0.0",
     "@telegram-apps/sdk-react": "^1.0.0",
     "@telegram-apps/telegram-ui": "^2.1.5",
     "@tonconnect/ui-react": "^2.0.5",
+    "axios": "^1.7.2",
     "eruda": "^3.0.1",
+    "framer-motion": "^11.3.6",
     "next": "14.2.4",
     "normalize.css": "^8.0.1",
     "react": "^18",
