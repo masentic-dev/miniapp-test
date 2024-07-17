@@ -41,7 +41,7 @@ export const BuyButton = ({ invoiceData }: { invoiceData: InvoiceData }) => {
       }
 
       // open the stars payment pop upyarn
-      window.open(data.result);
+      //   window.open(data.result);
     },
   });
 
