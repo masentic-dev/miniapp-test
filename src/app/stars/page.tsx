@@ -40,6 +40,8 @@ export default function StarsPage() {
     ?.find((user) => user.title === "id")
     ?.value?.toString();
 
+  console.log("userId", userId);
+
   return (
     <Box>
       <Grid templateColumns="repeat(2, 1fr)" rowGap={5}>

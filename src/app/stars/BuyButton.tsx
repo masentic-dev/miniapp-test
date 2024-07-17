@@ -29,6 +29,8 @@ export const BuyButton = ({ invoiceData }: { invoiceData: InvoiceData }) => {
       return response.data;
     },
     onSuccess: (data) => {
+      console.log("data on success", data);
+
       // open the stars payment pop upyarn
       window.open(data.result);
     },
