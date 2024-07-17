@@ -66,8 +66,8 @@ function RootInner({ children }: PropsWithChildren) {
     useTelegramMock();
   }
 
-  // const debug = useLaunchParams().startParam === "debug";
-  const debug = true;
+  const debug = useLaunchParams().startParam === "debug";
+  // const debug = true;
   const manifestUrl = useMemo(() => {
     return new URL("tonconnect-manifest.json", window.location.href).toString();
   }, []);
