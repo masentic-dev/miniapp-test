@@ -66,7 +66,7 @@ function RootInner({ children }: PropsWithChildren) {
     useTelegramMock();
   }
 
-  const debug = useLaunchParams().startParam === "debug";
+  // const debug = useLaunchParams().startParam === "debug";
   // const debug = true;
   const manifestUrl = useMemo(() => {
     return new URL("tonconnect-manifest.json", window.location.href).toString();
@@ -74,15 +74,18 @@ function RootInner({ children }: PropsWithChildren) {
 
   // Enable debug mode to see all the methods sent and events received.
   useEffect(() => {
-    if (debug) {
+    if (process.env.NODE_ENV === "development") {
       import("eruda").then((lib) => lib.default.init());
     }
-  }, [debug]);
+  }, [process.env.NODE_ENV]);
 
   return (
     <QueryClientProvider client={queryClient}>
       <TonConnectUIProvider manifestUrl={manifestUrl}>
-        <SDKProvider acceptCustomStyles debug={debug}>
+        <SDKProvider
+          acceptCustomStyles
+          debug={process.env.NODE_ENV === "development"}
+        >
           <App>{children}</App>
         </SDKProvider>
       </TonConnectUIProvider>

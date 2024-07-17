@@ -4,7 +4,7 @@ import { Box, Text, Grid, Image, Button } from "@chakra-ui/react";
 import data from "./products.json";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useInvoice } from "@telegram-apps/sdk-react";
+import { useInvoice, useInitData } from "@telegram-apps/sdk-react";
 
 export type TProduct = {
   id: number;
@@ -38,6 +38,11 @@ const useCreateInvoiceLink = (invoiceData: any) => {
 };
 
 export default function StarsPage() {
+  const initData = useInitData();
+
+  // @ts-ignore
+  console.log("users data", initData?.initData?.user);
+
   return (
     <Grid templateColumns="repeat(2, 1fr)" rowGap={5}>
       {data.products.map((p, index) => (
