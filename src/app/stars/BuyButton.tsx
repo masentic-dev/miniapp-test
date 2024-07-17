@@ -29,7 +29,7 @@ export const BuyButton = ({ invoiceData }: { invoiceData: InvoiceData }) => {
       return response.data;
     },
     onSuccess: (data) => {
-      // open the stars payment pop up
+      // open the stars payment pop upyarn
       window.open(data.result);
     },
   });

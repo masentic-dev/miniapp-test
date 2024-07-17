@@ -13,7 +13,7 @@ import {
   type DisplayDataRow,
 } from "@/components/DisplayData/DisplayData";
 
-export function getUserRows(user: User): DisplayDataRow[] {
+function getUserRows(user: User): DisplayDataRow[] {
   return [
     { title: "id", value: user.id.toString() },
     { title: "username", value: user.username },
