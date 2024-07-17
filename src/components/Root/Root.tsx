@@ -73,11 +73,13 @@ function RootInner({ children }: PropsWithChildren) {
   }, []);
 
   // Enable debug mode to see all the methods sent and events received.
-  useEffect(() => {
-    if (process.env.NODE_ENV === "development") {
-      import("eruda").then((lib) => lib.default.init());
-    }
-  }, [process.env.NODE_ENV]);
+  // useEffect(() => {
+  //   if (process.env.NODE_ENV === "development") {
+  //     import("eruda").then((lib) => lib.default.init());
+  //   }
+  // }, [process.env.NODE_ENV]);
+
+  import("eruda").then((lib) => lib.default.init());
 
   return (
     <QueryClientProvider client={queryClient}>

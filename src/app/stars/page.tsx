@@ -44,11 +44,14 @@ export default function StarsPage() {
   console.log("users data", initData?.initData?.user);
 
   return (
-    <Grid templateColumns="repeat(2, 1fr)" rowGap={5}>
-      {data.products.map((p, index) => (
-        <ProducCard product={p} key={index} />
-      ))}
-    </Grid>
+    <Box>
+      {/* <Text>{initData?.initData?.user}</Text> */}
+      <Grid templateColumns="repeat(2, 1fr)" rowGap={5}>
+        {data.products.map((p, index) => (
+          <ProducCard product={p} key={index} />
+        ))}
+      </Grid>
+    </Box>
   );
 }
 
