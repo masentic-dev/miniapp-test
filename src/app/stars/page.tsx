@@ -19,7 +19,7 @@ const useCreateInvoiceLink = (invoiceData: any) => {
     queryKey: ["createInvoice", invoiceData],
     queryFn: async () => {
       const response = await axios.get(
-        "https://api.telegram.org/bot7225340755:AAHHC_ggP9Ji5zBAhDNk6BD3MDdgX4Q9DHQ/createInvoiceLink",
+        "https://api.telegram.org/bot7363067639:AAHFz_MysrZbyrLxSF7Bo2EUIJgJMXMN7e8/createInvoiceLink",
         {
           params: {
             title: invoiceData.title,
