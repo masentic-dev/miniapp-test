@@ -9,7 +9,7 @@ Mini Apps platform using the following technologies and libraries:
 - [@telegram-apps SDK](https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk)
 - [Telegram UI](https://github.com/Telegram-Mini-Apps/TelegramUI)
 
-> The template was created using [pnpm](https://pnpm.io/). Therefore, it is required to use
+> The template was created using yarn. Therefore, it is required to use
 > it for this project as well. Using other package managers, you will receive a corresponding error.
 
 ## Install Dependencies
@@ -18,7 +18,7 @@ If you have just cloned this template, you should install the project dependenci
 command:
 
 ```Bash
-pnpm install
+yarn
 ```
 
 ## Scripts
@@ -32,11 +32,11 @@ This project contains the following scripts:
 - `lint`. Runs [eslint](https://eslint.org/) to ensure the code quality meets the required
   standards.
 
-To run a script, use the `pnpm run` command:
+To run a script, use the `yarn run` command:
 
 ```Bash
-pnpm run {script}
-# Example: pnpm run build
+yarn run {script}
+# Example: yarn run build
 ```
 
 ## Create Bot and Mini App
@@ -54,7 +54,7 @@ you can still develop and test them outside of Telegram during the development p
 To run the application in the development mode, use the `dev` script:
 
 ```bash
-pnpm run dev
+yarn run dev
 ```
 
 After this, you will see a similar message in your terminal:
@@ -91,7 +91,7 @@ This template already provides a solution.
 To retrieve a link with the HTTPS protocol, consider using the `dev:https` script:
 
 ```bash
-$ pnpm run dev:https
+$ yarn run dev:https
 
 ▲ Next.js 14.2.3
 - Local:        https://localhost:3000
@@ -112,7 +112,6 @@ Once the application is displayed correctly, submit this link as the Mini App li
 to [@BotFather](https://t.me/botfather). Then, navigate
 to [https://web.telegram.org/k/](https://web.telegram.org/k/), find your bot, and launch the
 Telegram Mini App. This approach provides the full development experience.
-
 
 ## Deploy
 
