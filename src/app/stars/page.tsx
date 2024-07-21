@@ -6,19 +6,8 @@ import data from "./products.json";
 import { type DisplayDataRow } from "@/components/DisplayData/DisplayData";
 import { useInitData, type User } from "@telegram-apps/sdk-react";
 
-function getUserRows(user: User): DisplayDataRow[] {
-  return [
-    { title: "id", value: user.id.toString() },
-    { title: "username", value: user.username },
-    { title: "photo_url", value: user.photoUrl },
-    { title: "last_name", value: user.lastName },
-    { title: "first_name", value: user.firstName },
-    { title: "is_bot", value: user.isBot },
-    { title: "is_premium", value: user.isPremium },
-    { title: "language_code", value: user.languageCode },
-    { title: "allows_to_write_to_pm", value: user.allowsWriteToPm },
-    { title: "added_to_attachment_menu", value: user.addedToAttachmentMenu },
-  ];
+function getUserID(user: User): string | undefined {
+  return user.id.toString() ?? undefined;
 }
 
 export type TProduct = {
@@ -32,15 +21,9 @@ export type TProduct = {
 export default function StarsPage() {
   const initData = useInitData();
 
-  const userRows = useMemo<DisplayDataRow[] | undefined>(() => {
-    return initData && initData.user ? getUserRows(initData.user) : undefined;
+  const userId = useMemo<string | undefined>(() => {
+    return initData && initData.user ? getUserID(initData.user) : undefined;
   }, [initData]);
-
-  const userId = userRows
-    ?.find((user) => user.title === "id")
-    ?.value?.toString();
-
-  console.log("userId", userId);
 
   return (
     <Box>
